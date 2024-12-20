@@ -1,25 +1,20 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="DTOs\" />
-    <Folder Include="Forms\" />
+    <Folder Include="Models\" />
     <Folder Include="Mappers\" />
+    <Folder Include="Interfaces\" />
     <Folder Include="Testing\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AccountingApp.BLL\AccountingApp.BLL.csproj" />
     <ProjectReference Include="..\AccountingApp.DAL\AccountingApp.DAL.csproj" />
     <ProjectReference Include="..\AccountingApp.Tools\AccountingApp.Tools.csproj" />
   </ItemGroup>
