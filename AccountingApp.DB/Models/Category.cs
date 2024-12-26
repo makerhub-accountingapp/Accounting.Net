@@ -11,5 +11,6 @@ namespace AccountingApp.DB.Models
         public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public int TransactionDetailId { get; set; }
+        public List<Detail> Details { get; set; } = new List<Detail>();
     }
 }

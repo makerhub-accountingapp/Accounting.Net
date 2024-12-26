@@ -20,6 +20,7 @@ namespace AccountingApp.DB.Configurations
             /********** Properties **********/
 
             builder.Property(a => a.Name).IsRequired();
+            builder.Property(a => a.UserId).IsRequired();
             builder.Property(a => a.Balance).HasDefaultValue(0);
             builder.Property(a => a.Balance)
                 .HasPrecision(10, 2);

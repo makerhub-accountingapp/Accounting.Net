@@ -14,5 +14,6 @@ namespace AccountingApp.DB.Models
         public Account Account { get; set; } = null!;
         public int RepetitionId { get; set; }
         public Repetition Repetition { get; set; } = null!;
+        public List<Detail> Details { get; set; } = new List<Detail>();
     }
 }
