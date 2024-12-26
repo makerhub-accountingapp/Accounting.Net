@@ -12,6 +12,8 @@ namespace AccountingApp.DB.Contexts
 {
     public class AccountingContext : DbContext
     {
+        public AccountingContext(DbContextOptions<AccountingContext> options) : base(options) { }
+
         public DbSet<User> Users { get; set; } = null!;
         public DbSet<Account> Account { get; set; } = null!;
         public DbSet<Transaction> Transaction { get; set; } = null!;
