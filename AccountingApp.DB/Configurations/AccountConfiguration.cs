@@ -17,13 +17,12 @@ namespace AccountingApp.DB.Configurations
             
             builder.ToTable("\"Account\"");
 
-            /********** Properties.IsRequired **********/
+            /********** Properties **********/
 
             builder.Property(a => a.Name).IsRequired();
-
-            /********** Properties.Others **********/
-
             builder.Property(a => a.Balance).HasDefaultValue(0);
+            builder.Property(a => a.Balance)
+                .HasPrecision(10, 2);
 
             /********** Keys **********/
 

@@ -14,5 +14,6 @@ namespace AccountingApp.DB.Models
         public DateTime NextDate { get; set; }
         public DateTime EndDate { get; set; }
         public int TransactionId { get; set; }
+        public List<Transaction> Transactions { get; set; } = new List<Transaction>();
     }
 }

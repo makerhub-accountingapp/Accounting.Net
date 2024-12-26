@@ -19,13 +19,10 @@ namespace AccountingApp.DAL.Contexts
             // CaseSensitive « \"\" »
             builder.ToTable("\"User\"");
 
-            /********** Properties.IsRequired **********/
+            /********** Properties **********/
 
             builder.Property(u => u.Email).IsRequired();
             builder.Property(u => u.Password).IsRequired();
-
-            /********** Properties.Others **********/
-
             builder.Property(u => u.IsActive).HasDefaultValue(true);
 
             /********** Keys **********/

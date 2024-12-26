@@ -12,5 +12,7 @@ namespace AccountingApp.DB.Models
         public string Name { get; set; } = string.Empty;
         public int AccountId { get; set; }
         public Account Account { get; set; } = null!;
+        public int RepetitionId { get; set; }
+        public Repetition Repetition { get; set; } = null!;
     }
 }
