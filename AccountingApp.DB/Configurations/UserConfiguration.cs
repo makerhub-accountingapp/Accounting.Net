@@ -10,35 +10,36 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace AccountingApp.DAL.Contexts
 {
-    public class UserContext : IEntityTypeConfiguration<User>
+    public class UserConfiguration : IEntityTypeConfiguration<User>
     {
-        public DbSet<User> Users { get; set; } = null!;
-
         public void Configure(EntityTypeBuilder<User> builder)
         {
-            //! \"\" => CaseSensitive
+            /********** Tables **********/
+
+            // CaseSensitive « \"\" »
             builder.ToTable("\"User\"");
 
-            // Properties.IsRequired
+            /********** Properties.IsRequired **********/
 
             builder.Property(u => u.Email).IsRequired();
             builder.Property(u => u.Password).IsRequired();
-            
-            // Properties.Others
+
+            /********** Properties.Others **********/
 
             builder.Property(u => u.IsActive).HasDefaultValue(true);
 
-            // Keys
-
-            builder.HasKey(u => u.Id);
+            /********** Keys **********/
+            
             builder.HasMany(u => u.Accounts)
                 .WithOne(a => a.User)
                 .HasForeignKey(a => a.UserId);
 
 
-            /********************** NOTE **********************/
+            /********** NOTE **********/
             // If the primary key name is Id, the methods below are not necessary.
             // builder.Property(u => u.Id).ValueGeneratedOnAdd();
+
+            // builder.HasKey(u => u.Id);
 
             // builder.HasMany(u => u.Accounts)
             //    .WithOne(a => a.User)

@@ -1,5 +1,6 @@
 using System.Data;
 using AccountingApp.DAL.Contexts;
+using AccountingApp.DB.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Npgsql;
 
@@ -8,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("Default");
 
 // Add services to the container.
-builder.Services.AddDbContext<UserContext>(options => options.UseNpgsql(connectionString));
+builder.Services.AddDbContext<AccountingContext>(options => options.UseNpgsql(connectionString));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
