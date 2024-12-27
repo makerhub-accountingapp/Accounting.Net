@@ -13,9 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
     <Folder Include="Testing\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,6 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AccountingApp.DB\AccountingApp.DB.csproj" />
     <ProjectReference Include="..\AccountingApp.Tools\AccountingApp.Tools.csproj" />
   </ItemGroup>
 
