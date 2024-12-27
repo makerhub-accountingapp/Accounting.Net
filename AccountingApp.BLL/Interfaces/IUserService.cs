@@ -10,8 +10,23 @@ namespace AccountingApp.BLL.Interfaces
 {
     public interface IUserService
     {
+        /// <summary>
+        /// Adds a new user to the database.
+        /// </summary>
+        /// <param name="user">User to add.</param>
+        /// <returns>The added user, or null.</returns>
         User? Create(UserForm user);
-        void Delete(UserForm user);
+
+        /// <summary>
+        /// Deletes an user from the database.
+        /// </summary>
+        /// <param name="id">Id to remove.</param>
+        void Delete(int id);
+
+        /// <summary>
+        /// Updates an existing user in the repository.
+        /// </summary>
+        /// <param name="user">User with updated values.</param>
         void Update(UserUpdateForm user);
     }
 }

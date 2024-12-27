@@ -22,17 +22,25 @@ namespace AccountingApp.BLL.Services
                 throw new AlreadyExistException("The user already exists.");
             }
 
-            User userToAdd = user.ToEntity();
+            User userToCreate = user.ToEntity();
 
             //TODO Hash password
-            userToAdd.Password = "Password";
+            userToCreate.Password = "Password";
 
-            return repo.Create(userToAdd);
+            return repo.Create(userToCreate);
         }
 
-        public void Delete(UserForm user)
+        public void Delete(int id)
         {
-            repo.Delete(user.ToEntity());
+            User? userToDelete = repo.GetOne(u => u.Id == id);
+
+            if (userToDelete is null)
+            {
+                throw new NotFoundException("The user was not found.");
+            }
+
+            //TODO Make trigger for Delete
+            repo.Delete(userToDelete);
         }
 
         public void Update(UserUpdateForm user)

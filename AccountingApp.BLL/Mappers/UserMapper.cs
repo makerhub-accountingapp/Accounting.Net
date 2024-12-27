@@ -8,7 +8,7 @@ using AccountingApp.DB.Entities;
 
 namespace AccountingApp.BLL.Mappers
 {
-    public static class UserMapper
+    internal static class UserMapper
     {
         public static User ToEntity(this UserForm u)
         {
