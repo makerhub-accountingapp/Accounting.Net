@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingApp.DAL", "Accoun
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingApp.Tools", "AccountingApp.Tools\AccountingApp.Tools.csproj", "{CD932794-82FB-48DF-81B0-C42031314468}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingApp.DB", "AccountingApp.DB\AccountingApp.DB.csproj", "{9C173D53-2903-4B45-9A67-08430A6A95B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{CD932794-82FB-48DF-81B0-C42031314468}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD932794-82FB-48DF-81B0-C42031314468}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD932794-82FB-48DF-81B0-C42031314468}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C173D53-2903-4B45-9A67-08430A6A95B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C173D53-2903-4B45-9A67-08430A6A95B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C173D53-2903-4B45-9A67-08430A6A95B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C173D53-2903-4B45-9A67-08430A6A95B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

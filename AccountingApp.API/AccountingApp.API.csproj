@@ -7,12 +7,28 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <Compile Remove="DTOs\**" />
+    <Content Remove="DTOs\**" />
+    <EmbeddedResource Remove="DTOs\**" />
+    <None Remove="DTOs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="DTOs\" />
     <Folder Include="Forms\" />
     <Folder Include="Mappers\" />
     <Folder Include="Testing\" />
@@ -21,6 +37,7 @@
   <ItemGroup>
     <ProjectReference Include="..\AccountingApp.BLL\AccountingApp.BLL.csproj" />
     <ProjectReference Include="..\AccountingApp.DAL\AccountingApp.DAL.csproj" />
+    <ProjectReference Include="..\AccountingApp.DB\AccountingApp.DB.csproj" />
     <ProjectReference Include="..\AccountingApp.Tools\AccountingApp.Tools.csproj" />
   </ItemGroup>
 
