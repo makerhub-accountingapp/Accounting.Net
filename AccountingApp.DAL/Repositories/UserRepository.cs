@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AccountingApp.DAL.Interfaces;
 using AccountingApp.DB.Contexts;
-using AccountingApp.DB.Models;
+using AccountingApp.DB.Entities;
 using AccountingApp.Tools.Templates;
 
 namespace AccountingApp.DAL.Repositories

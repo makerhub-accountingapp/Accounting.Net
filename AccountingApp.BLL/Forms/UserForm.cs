@@ -16,4 +16,14 @@ namespace AccountingApp.BLL.Forms
         [Required]
         public string Password { get; set; } = string.Empty;
     }
+    public class UserUpdateForm
+    {
+        [EmailAddress]
+        public string OldEmail { get; set; } = string.Empty;
+
+        [EmailAddress]
+        public string? NewEmail { get; set; } = null;
+        
+        public string? NewPassword { get; set; } = null;
+    }
 }

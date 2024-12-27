@@ -8,14 +8,14 @@ using AccountingApp.BLL.Forms;
 using AccountingApp.BLL.Interfaces;
 using AccountingApp.BLL.Mappers;
 using AccountingApp.DAL.Interfaces;
-using AccountingApp.DB.Models;
+using AccountingApp.DB.Entities;
 using AccountingApp.Tools.Exceptions;
 
 namespace AccountingApp.BLL.Services
 {
     public class UserService(IUserRepository repo) : IUserService
     {
-        public User? CreateAsync(UserForm user)
+        public User? Create(UserForm user)
         {
             if (repo.Any(u => u.Email.Equals(user.Email, StringComparison.CurrentCultureIgnoreCase)))
             {
@@ -23,21 +23,30 @@ namespace AccountingApp.BLL.Services
             }
 
             User userToAdd = user.ToEntity();
+
             //TODO Hash password
             userToAdd.Password = "Password";
 
             return repo.Create(userToAdd);
         }
 
-        public void UpdatePassword(UserForm user)
+        public void Delete(UserForm user)
         {
-            User? foundUser = repo.GetOne(u => u.Email == user.Email);
+            repo.Delete(user.ToEntity());
+        }
+
+        public void Update(UserUpdateForm user)
+        {
+            User? foundUser = repo.GetOne(u => u.Email == user.OldEmail);
             if (foundUser is null)
             {
                 throw new NotFoundException("The user was not found.");
             }
+            
+            if (user.NewEmail is not null) foundUser.Email = user.NewEmail;
+
             //TODO Hash password
-            foundUser.Password = user.Password;
+            if (user.NewPassword is not null) foundUser.Password = user.NewPassword;
 
             repo.Update(foundUser);
         }

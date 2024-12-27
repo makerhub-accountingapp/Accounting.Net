@@ -25,6 +25,13 @@ namespace AccountingApp.Tools.Templates
         TEntity? Create(TEntity entity);
 
         /// <summary>
+        /// Deletes an entity from the database.
+        /// </summary>
+        /// <param name="entity">Entity to remove.</param>
+        /// <returns>The removed entity.</returns>
+        TEntity? Delete(TEntity entity);
+
+        /// <summary>
         /// Retrieves entities that match the given condition.
         /// </summary>
         /// <param name="predicate">Condition to filter entities (optional).</param>
@@ -37,13 +44,6 @@ namespace AccountingApp.Tools.Templates
         /// <param name="predicate">Condition to test the entity.</param>
         /// <returns>The matching entity, or null.</returns>
         TEntity? GetOne(Func<TEntity, bool> predicate);
-
-        /// <summary>
-        /// Deletes an entity from the database.
-        /// </summary>
-        /// <param name="entity">Entity to remove.</param>
-        /// <returns>The removed entity.</returns>
-        TEntity? Remove(TEntity entity);
 
         /// <summary>
         /// Updates an existing entity in the repository.

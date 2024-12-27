@@ -35,6 +35,14 @@ namespace AccountingApp.Tools.Templates
             return entry.Entity;
         }
 
+        public virtual TEntity? Delete(TEntity entity)
+        {
+            EntityEntry<TEntity> entry = _context.Remove(entity);
+            entry.State = EntityState.Deleted;
+            _context.SaveChanges();
+            return entry.Entity;
+        }
+
         public virtual IEnumerable<TEntity> Get(Func<TEntity, bool>? predicate)
         {
             return predicate is null ? 
@@ -44,14 +52,6 @@ namespace AccountingApp.Tools.Templates
         public virtual TEntity? GetOne(Func<TEntity, bool> predicate)
         {
             return Entities.FirstOrDefault(predicate);
-        }
-
-        public virtual TEntity? Remove(TEntity entity)
-        {
-            EntityEntry<TEntity> entry = _context.Remove(entity);
-            entry.State = EntityState.Deleted;
-            _context.SaveChanges();
-            return entry.Entity;
         }
 
         public virtual TEntity? Update(TEntity entity)

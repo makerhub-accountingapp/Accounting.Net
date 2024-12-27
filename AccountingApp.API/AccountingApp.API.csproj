@@ -7,10 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="DTOs\**" />
-    <Content Remove="DTOs\**" />
-    <EmbeddedResource Remove="DTOs\**" />
-    <None Remove="DTOs\**" />
+    <Compile Remove="Forms\**" />
+    <Content Remove="Forms\**" />
+    <EmbeddedResource Remove="Forms\**" />
+    <None Remove="Forms\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -28,9 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Forms\" />
-    <Folder Include="Mappers\" />
     <Folder Include="Testing\" />
   </ItemGroup>
 

@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AccountingApp.BLL.Forms;
-using AccountingApp.DB.Models;
+using AccountingApp.DB.Entities;
 
 namespace AccountingApp.BLL.Interfaces
 {
     public interface IUserService
     {
-        User? CreateAsync(UserForm user);
-        void UpdatePassword(UserForm user);
+        User? Create(UserForm user);
+        void Delete(UserForm user);
+        void Update(UserUpdateForm user);
     }
 }

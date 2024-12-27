@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AccountingApp.BLL.Forms;
-using AccountingApp.DB.Models;
+using AccountingApp.DB.Entities;
 
 namespace AccountingApp.BLL.Mappers
 {
