@@ -17,7 +17,7 @@ namespace AccountingApp.DAL.Contexts
             /********** Tables **********/
 
             // CaseSensitive « \"\" »
-            builder.ToTable("\"User\"");
+            builder.ToTable("User");
 
             /********** Properties **********/
 

@@ -15,13 +15,12 @@ namespace AccountingApp.DB.Configurations
         {
             /********** Tables **********/
 
-            builder.ToTable("\"Detail\"");
+            builder.ToTable("Detail");
 
             /********** Properties **********/
 
             builder.Property(d => d.Amount).IsRequired();
             builder.Property(d => d.TransactionDate).IsRequired();
-            builder.Property(d => d.TransactionDate).HasDefaultValue(DateTime.Now);
             builder.Property(d => d.TransactionId).IsRequired();
             builder.Property(d => d.Note).HasDefaultValue("");
         }

@@ -3,6 +3,7 @@ using System;
 using AccountingApp.DB.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AccountingApp.DB.Migrations
 {
     [DbContext(typeof(AccountingContext))]
-    partial class AccountingContextModelSnapshot : ModelSnapshot
+    [Migration("20241226120554_InitialMigration")]
+    partial class InitialMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,7 +50,7 @@ namespace AccountingApp.DB.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Account", (string)null);
+                    b.ToTable("\"Account\"", (string)null);
                 });
 
             modelBuilder.Entity("AccountingApp.DB.Models.Category", b =>
@@ -67,7 +70,7 @@ namespace AccountingApp.DB.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Category", (string)null);
+                    b.ToTable("\"Category\"", (string)null);
                 });
 
             modelBuilder.Entity("AccountingApp.DB.Models.Detail", b =>
@@ -107,7 +110,7 @@ namespace AccountingApp.DB.Migrations
 
                     b.HasIndex("TransactionTypeId");
 
-                    b.ToTable("Detail", (string)null);
+                    b.ToTable("\"Detail\"", (string)null);
                 });
 
             modelBuilder.Entity("AccountingApp.DB.Models.Repetition", b =>
@@ -136,7 +139,7 @@ namespace AccountingApp.DB.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Repetition", (string)null);
+                    b.ToTable("\"Repetition\"", (string)null);
                 });
 
             modelBuilder.Entity("AccountingApp.DB.Models.Transaction", b =>
@@ -163,7 +166,7 @@ namespace AccountingApp.DB.Migrations
 
                     b.HasIndex("RepetitionId");
 
-                    b.ToTable("Transaction", (string)null);
+                    b.ToTable("\"Transaction\"", (string)null);
                 });
 
             modelBuilder.Entity("AccountingApp.DB.Models.TransactionType", b =>
@@ -180,7 +183,7 @@ namespace AccountingApp.DB.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TransactionType", (string)null);
+                    b.ToTable("\"TransactionType\"", (string)null);
                 });
 
             modelBuilder.Entity("AccountingApp.DB.Models.User", b =>
@@ -206,7 +209,7 @@ namespace AccountingApp.DB.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("User", (string)null);
+                    b.ToTable("\"User\"", (string)null);
                 });
 
             modelBuilder.Entity("AccountingApp.DB.Models.Account", b =>

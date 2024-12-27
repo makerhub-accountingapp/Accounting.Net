@@ -15,12 +15,11 @@ namespace AccountingApp.DB.Configurations
         {
             /********** Tables **********/
 
-            builder.ToTable("\"Repetition\"");
+            builder.ToTable("Repetition");
 
             /********** Properties **********/
 
             builder.Property(r => r.Name).IsRequired();
-            builder.Property(r => r.SetDate).HasDefaultValue(DateTime.Now);
 
             /********** Keys **********/
 

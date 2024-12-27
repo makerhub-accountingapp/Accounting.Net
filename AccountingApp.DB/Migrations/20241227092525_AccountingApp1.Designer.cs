@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AccountingApp.DB.Migrations
 {
     [DbContext(typeof(AccountingContext))]
-    [Migration("20241226083712_AccountingEF1")]
-    partial class AccountingEF1
+    [Migration("20241227092525_AccountingApp1")]
+    partial class AccountingApp1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,7 +50,7 @@ namespace AccountingApp.DB.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("\"Account\"", (string)null);
+                    b.ToTable("Account", (string)null);
                 });
 
             modelBuilder.Entity("AccountingApp.DB.Models.Category", b =>
@@ -70,7 +70,7 @@ namespace AccountingApp.DB.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("\"Category\"", (string)null);
+                    b.ToTable("Category", (string)null);
                 });
 
             modelBuilder.Entity("AccountingApp.DB.Models.Detail", b =>
@@ -94,9 +94,7 @@ namespace AccountingApp.DB.Migrations
                         .HasDefaultValue("");
 
                     b.Property<DateTime>("TransactionDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("timestamp with time zone")
-                        .HasDefaultValue(new DateTime(2024, 12, 26, 9, 37, 11, 639, DateTimeKind.Local).AddTicks(6534));
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("TransactionId")
                         .HasColumnType("integer");
@@ -112,7 +110,7 @@ namespace AccountingApp.DB.Migrations
 
                     b.HasIndex("TransactionTypeId");
 
-                    b.ToTable("\"Detail\"", (string)null);
+                    b.ToTable("Detail", (string)null);
                 });
 
             modelBuilder.Entity("AccountingApp.DB.Models.Repetition", b =>
@@ -134,16 +132,14 @@ namespace AccountingApp.DB.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<DateTime>("SetDate")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("timestamp with time zone")
-                        .HasDefaultValue(new DateTime(2024, 12, 26, 9, 37, 11, 636, DateTimeKind.Local).AddTicks(8392));
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<int>("TransactionId")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
 
-                    b.ToTable("\"Repetition\"", (string)null);
+                    b.ToTable("Repetition", (string)null);
                 });
 
             modelBuilder.Entity("AccountingApp.DB.Models.Transaction", b =>
@@ -170,7 +166,7 @@ namespace AccountingApp.DB.Migrations
 
                     b.HasIndex("RepetitionId");
 
-                    b.ToTable("\"Transaction\"", (string)null);
+                    b.ToTable("Transaction", (string)null);
                 });
 
             modelBuilder.Entity("AccountingApp.DB.Models.TransactionType", b =>
@@ -187,7 +183,7 @@ namespace AccountingApp.DB.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("\"TransactionType\"", (string)null);
+                    b.ToTable("TransactionType", (string)null);
                 });
 
             modelBuilder.Entity("AccountingApp.DB.Models.User", b =>
@@ -213,7 +209,7 @@ namespace AccountingApp.DB.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("\"User\"", (string)null);
+                    b.ToTable("User", (string)null);
                 });
 
             modelBuilder.Entity("AccountingApp.DB.Models.Account", b =>

@@ -15,7 +15,7 @@ namespace AccountingApp.DB.Configurations
         {
             /********** Tables **********/
             
-            builder.ToTable("\"Account\"");
+            builder.ToTable("Account");
 
             /********** Properties **********/
 
