@@ -32,9 +32,9 @@ namespace AccountingApp.BLL.Forms
     {
         public int? Id { get; set; }
         public string? Name { get; set; }
-        public string? Category { get; set; }
-        public string? TransactionType { get; set; }
-        public string? Repetition { get; set; }
+        public int? CategoryId { get; set; }
+        public int? TransactionTypeId { get; set; }
+        public int? RepetitionId { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
     }

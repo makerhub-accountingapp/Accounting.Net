@@ -17,6 +17,7 @@ namespace AccountingApp.BLL.Services
     {
         public User? Create(UserForm user)
         {
+            // Check if the user already exists
             if (repo.Any(u => u.Email.Equals(user.Email, StringComparison.CurrentCultureIgnoreCase)))
             {
                 throw new AlreadyExistException("The user already exists.");
@@ -32,6 +33,7 @@ namespace AccountingApp.BLL.Services
 
         public void Delete(int id)
         {
+            // Check if the user exists
             User? userToDelete = repo.GetOne(u => u.Id == id);
 
             if (userToDelete is null)
@@ -45,7 +47,9 @@ namespace AccountingApp.BLL.Services
 
         public User? Update(UserUpdateForm user)
         {
+            // Check if the user exists
             User? foundUser = repo.GetOne(u => u.Email == user.OldEmail);
+
             if (foundUser is null)
             {
                 throw new NotFoundException("The user was not found.");
