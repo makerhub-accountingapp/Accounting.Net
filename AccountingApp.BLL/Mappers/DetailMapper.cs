@@ -22,5 +22,19 @@ namespace AccountingApp.BLL.Mappers
                 TransactionTypeId = detail.TransactionTypeId,
             };
         }
+
+        public static Detail ToEntity(this DetailUpdateForm detail)
+        {
+            return new Detail
+            {
+                Id = detail.Id,
+                Amount = detail.Amount,
+                TransactionDate = detail.TransactionDate,
+                Note = detail.Note,
+                TransactionId = detail.TransactionId,
+                CategoryId = detail.CategoryId,
+                TransactionTypeId = detail.TransactionTypeId,
+            };
+        }
     }
 }

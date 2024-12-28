@@ -39,14 +39,17 @@ namespace AccountingApp.BLL.Services
             repo.Delete(detailToDelete);
         }
 
-        public IEnumerable<Detail> Get(int? id, string? name, string? category, string? transactionType, string? repetition, DateTime? startDate, DateTime? endDate)
+        public IEnumerable<Detail> Get(DetailGetForm detail)
         {
             return repo.Get(d => 
-                (id is null || d.Id == id) &&
-                (category is null || d.Category.Name == category) &&
-                (name is null || d.TransactionType.Name == transactionType) &&
-                (repetition is null || d.Transaction.Repetition.Name == repetition) &&
-                (startDate is null || endDate is null || d.TransactionDate >= startDate && d.TransactionDate <= endDate));
+                (detail.Id is null || d.Id == detail.Id) &&
+                (detail.Category is null || d.Category.Name == detail.Category) &&
+                (detail.Name is null || d.Transaction.Name == detail.Name) &&
+                (detail.TransactionType is null || d.TransactionType.Name == detail.TransactionType) &&
+                (detail.Repetition is null || d.Transaction.Repetition.Name == detail.Repetition) &&
+                (detail.StartDate is null || detail.EndDate is null || 
+                (d.TransactionDate >= detail.StartDate && d.TransactionDate <= detail.EndDate))
+            );
         }
 
         public Detail? GetById(int id)
@@ -54,7 +57,7 @@ namespace AccountingApp.BLL.Services
             return repo.GetOne(d => d.Id == id);
         }
 
-        public Detail? Update(Detail detail)
+        public Detail? Update(DetailUpdateForm detail)
         {
             Detail? foundDetail = repo.GetOne(d => d.Id == detail.Id);
 
@@ -63,7 +66,7 @@ namespace AccountingApp.BLL.Services
                 throw new NotFoundException("The transaction detail was not found");
             }
 
-            return repo.Update(detail);
+            return repo.Update(detail.ToEntity());
         }
     }
 }

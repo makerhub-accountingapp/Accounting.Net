@@ -28,7 +28,7 @@ namespace AccountingApp.BLL.Interfaces
         /// </summary>
         /// <params>Condition to filter details (optional).</param>
         /// <returns>A collection of matching details.</returns>
-        IEnumerable<Detail> Get(int? id, string? name, string? category, string? transactionType, string? repetition, DateTime? startDate, DateTime? endDate);
+        IEnumerable<Detail> Get(DetailGetForm detail);
 
         /// <summary>
         /// Retrieves a single detail that matches the condition.
@@ -42,6 +42,6 @@ namespace AccountingApp.BLL.Interfaces
         /// </summary>
         /// <param name="detail">Detail with updated values.</param>
         /// <returns>The updated detail.</returns>
-        Detail? Update(DetailForm detail);
+        Detail? Update(DetailUpdateForm detail);
     }
 }

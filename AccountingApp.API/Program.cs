@@ -17,6 +17,9 @@ builder.Services.AddDbContext<AccountingContext>(options => options.UseNpgsql(co
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
 
+builder.Services.AddScoped<IDetailRepository, DetailRepository>();
+builder.Services.AddScoped<IDetailService, DetailService>();
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

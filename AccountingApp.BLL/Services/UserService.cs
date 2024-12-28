@@ -43,7 +43,7 @@ namespace AccountingApp.BLL.Services
             repo.Delete(userToDelete);
         }
 
-        public void Update(UserUpdateForm user)
+        public User? Update(UserUpdateForm user)
         {
             User? foundUser = repo.GetOne(u => u.Email == user.OldEmail);
             if (foundUser is null)
@@ -56,7 +56,7 @@ namespace AccountingApp.BLL.Services
             //TODO Hash password
             if (user.NewPassword is not null) foundUser.Password = user.NewPassword;
 
-            repo.Update(foundUser);
+            return repo.Update(foundUser);
         }
     }
 }

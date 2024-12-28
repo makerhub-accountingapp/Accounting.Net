@@ -27,6 +27,6 @@ namespace AccountingApp.BLL.Interfaces
         /// Updates an existing user in the repository.
         /// </summary>
         /// <param name="user">User with updated values.</param>
-        void Update(UserUpdateForm user);
+        User? Update(UserUpdateForm user);
     }
 }
