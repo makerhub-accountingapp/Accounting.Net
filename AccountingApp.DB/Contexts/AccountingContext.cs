@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using AccountingApp.DAL.Contexts;
 using AccountingApp.DB.Configurations;
-using AccountingApp.DB.Models;
+using AccountingApp.DB.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace AccountingApp.DB.Contexts

@@ -13,17 +13,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
     <Folder Include="Testing\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.11" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.2" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AccountingApp.DB\AccountingApp.DB.csproj" />
     <ProjectReference Include="..\AccountingApp.Tools\AccountingApp.Tools.csproj" />
   </ItemGroup>
 
