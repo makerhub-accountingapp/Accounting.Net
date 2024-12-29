@@ -20,7 +20,10 @@ namespace AccountingApp.DB.Configurations
             /********** Properties **********/
 
             builder.Property(t => t.Name).IsRequired();
-            builder.Property(t => t.RepetitionId).IsRequired();
+            builder.Property(t => t.Repetition).IsRequired();
+            builder.Property(t => t.SetDate).IsRequired();
+            builder.Property(t => t.SetDate).HasColumnType("timestamp");
+            builder.Property(t => t.EndDate).HasColumnType("timestamp");
 
             /********** Keys **********/
 
