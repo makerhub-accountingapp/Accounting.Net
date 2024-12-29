@@ -43,15 +43,16 @@ namespace AccountingApp.BLL.Services
 
         public IEnumerable<Detail> Get(DetailGetForm detail)
         {
-            return repo.Get(d => 
-                (detail.Id is null || d.Id == detail.Id) &&
+            IEnumerable<Detail> foundDetails = repo.Get(d => 
                 (detail.Name is null || d.Transaction.Name == detail.Name) &&
                 (detail.CategoryId is null || d.CategoryId == detail.CategoryId) &&
                 (detail.TransactionTypeId is null || d.TransactionTypeId == detail.TransactionTypeId) &&
-                (detail.RepetitionId is null || d.Transaction.RepetitionId == detail.RepetitionId) &&
+                (detail.Repetition is null || d.Transaction.Repetition == detail.Repetition) &&
                 (detail.StartDate is null || detail.EndDate is null || 
                 (d.TransactionDate >= detail.StartDate && d.TransactionDate <= detail.EndDate))
             );
+
+            return foundDetails;
         }
 
         public Detail? GetById(int id)

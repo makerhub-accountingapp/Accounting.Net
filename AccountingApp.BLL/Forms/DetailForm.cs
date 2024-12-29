@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AccountingApp.DB.Entities;
+using AccountingApp.Tools.Enums;
 
 namespace AccountingApp.BLL.Forms
 {
@@ -30,11 +31,10 @@ namespace AccountingApp.BLL.Forms
 
     public class DetailGetForm
     {
-        public int? Id { get; set; }
         public string? Name { get; set; }
         public int? CategoryId { get; set; }
         public int? TransactionTypeId { get; set; }
-        public int? RepetitionId { get; set; }
+        public RepetitionEnum? Repetition { get; set; }
         public DateTime? StartDate { get; set; }
         public DateTime? EndDate { get; set; }
     }

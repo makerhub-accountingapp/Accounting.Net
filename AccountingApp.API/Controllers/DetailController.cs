@@ -1,6 +1,7 @@
 ﻿using AccountingApp.BLL.Forms;
 using AccountingApp.BLL.Interfaces;
 using AccountingApp.DB.Entities;
+using AccountingApp.Tools.Enums;
 using AccountingApp.Tools.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -60,8 +61,17 @@ namespace AccountingApp.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IEnumerable<Detail>))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IActionResult Get([FromBody] DetailGetForm detail)
+        public IActionResult Get(string? name, int? categoryId, int? transactionTypeId, RepetitionEnum? repetition, DateTime? startDate, DateTime? endDate)
         {
+            DetailGetForm detail = new DetailGetForm()
+            {
+                Name = name,
+                CategoryId = categoryId,
+                TransactionTypeId = transactionTypeId,
+                Repetition = repetition,
+                StartDate = startDate,
+                EndDate = endDate
+            };
             try
             {
                 IEnumerable<Detail> foundDetails = service.Get(detail);
