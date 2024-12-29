@@ -23,6 +23,7 @@ namespace AccountingApp.DB.Configurations
             builder.Property(d => d.TransactionDate).IsRequired();
             builder.Property(d => d.TransactionId).IsRequired();
             builder.Property(d => d.Note).HasDefaultValue("");
+            builder.Property(d => d.TransactionDate).HasColumnType("timestamp");
         }
     }
 }
